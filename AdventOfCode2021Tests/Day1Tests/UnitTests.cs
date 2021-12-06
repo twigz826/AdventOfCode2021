@@ -1,4 +1,4 @@
-using AdventOfCode2021.Day1;
+using AdventOfCode2021Day1.Day1;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
@@ -26,7 +26,7 @@ namespace AdventOfCodeTests
         [TestMethod, TestCategory("Two number input")]
         public void Return_0_Where_The_Second_Number_Is_Less_Than_The_First()
         {
-            List<int> depthReadings = new List<int> { 100, 50 };
+            List<int> depthReadings = new List<int> { 2, 1 };
             var depthReport = SeaFloorDepth.rateOfIncrease(depthReadings);
             Assert.AreEqual(0, depthReport);
         }
@@ -34,7 +34,7 @@ namespace AdventOfCodeTests
         [TestMethod, TestCategory("Two number input")]
         public void Return_0_Where_The_Second_Number_Is_The_Same_As_The_First()
         {
-            List<int> depthReadings = new List<int> { 50, 50 };
+            List<int> depthReadings = new List<int> { 1, 1 };
             var depthReport = SeaFloorDepth.rateOfIncrease(depthReadings);
             Assert.AreEqual(0, depthReport);
         }
@@ -42,7 +42,7 @@ namespace AdventOfCodeTests
         [TestMethod, TestCategory("Two number input")]
         public void Return_1_Where_The_Second_Number_Is_Greater_Than_The_First()
         {
-            List<int> depthReadings = new List<int> { 50, 100 };
+            List<int> depthReadings = new List<int> { 1, 2 };
             var depthReport = SeaFloorDepth.rateOfIncrease(depthReadings);
             Assert.AreEqual(1, depthReport);
         }
@@ -53,6 +53,22 @@ namespace AdventOfCodeTests
             List<int> depthReadings = new List<int> { 1, 2, 3 };
             var depthReport = SeaFloorDepth.rateOfIncrease(depthReadings);
             Assert.AreEqual(2, depthReport);
+        }
+
+        [TestMethod, TestCategory("Three number input")]
+        public void Return_0_For_Numbers_In_Descending_Order()
+        {
+            List<int> depthReadings = new List<int> { 3, 2, 1 };
+            var depthReport = SeaFloorDepth.rateOfIncrease(depthReadings);
+            Assert.AreEqual(0, depthReport);
+        }
+
+        [TestMethod, TestCategory("Three number input")]
+        public void Return_1_Where_One_Number_Exceeds_The_Previous_Number()
+        {
+            List<int> depthReadings = new List<int> { 2, 1, 3 };
+            var depthReport = SeaFloorDepth.rateOfIncrease(depthReadings);
+            Assert.AreEqual(1, depthReport);
         }
 
     }

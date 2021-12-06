@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode2021.Day1
+namespace AdventOfCode2021Day1.Day1
 {
     public static class SeaFloorDepth
     {
