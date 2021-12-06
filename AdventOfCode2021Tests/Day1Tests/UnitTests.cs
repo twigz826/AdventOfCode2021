@@ -47,5 +47,13 @@ namespace AdventOfCodeTests
             Assert.AreEqual(1, depthReport);
         }
 
+        [TestMethod, TestCategory("Three number input")]
+        public void Return_2_For_Numbers_In_Ascending_Order()
+        {
+            List<int> depthReadings = new List<int> { 1, 2, 3 };
+            var depthReport = SeaFloorDepth.rateOfIncrease(depthReadings);
+            Assert.AreEqual(2, depthReport);
+        }
+
     }
 }
