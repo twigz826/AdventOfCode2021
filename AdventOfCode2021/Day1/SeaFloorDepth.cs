@@ -10,6 +10,10 @@ namespace AdventOfCode2021.Day1
     {
         public static int rateOfIncrease(List<int> depthReadings)
         {
+            if(depthReadings.Count > 1 && depthReadings[0] < depthReadings[1])
+            {
+                return 1;
+            }
             return 0;
         }
     }
